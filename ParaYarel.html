@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XD</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        button {
+            padding: 100px 200px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <audio id="oña" src="xd.mp3" autoplay loop></audio>
+    <button id="botonReproducir">Me llegas al huevo (haz click)</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('oña');
+            var botonReproducir = document.getElementById('botonReproducir');
+
+            audio.play().catch(function(error) {
+                console.error("Error al intentar reproducir el audio automáticamente:", error);
+            });
+
+            botonReproducir.addEventListener('click', function() {
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>
